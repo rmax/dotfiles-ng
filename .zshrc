@@ -163,4 +163,7 @@ bindkey '^?' backward-delete-char
 
 func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+[ -s "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+
 export PATH="$HOME/bin:$PATH"

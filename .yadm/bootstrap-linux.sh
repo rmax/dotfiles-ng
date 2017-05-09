@@ -5,6 +5,7 @@ sudo apt-get install -y \
   vim \
   python \
   python-dev \
+  rake \
   ruby \
   ruby-dev \
   zsh-beta
