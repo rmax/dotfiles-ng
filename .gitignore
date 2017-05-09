@@ -1,0 +1,17 @@
+*~
+*.pyc
+.*swp
+*.tmp
+*.orig
+.git/
+.hg/
+.svn/
+CVS/
+.ropeproject
+.tags
+cover/
+
+# compressed files
+*.gz
+*.bz2
+*.xz

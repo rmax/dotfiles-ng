@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Because Git submodule commands cannot operate without a work tree, they must
+# be run from within $HOME (assuming this is the root of your dotfiles)
+function submodules_init() {
+  pushd $HOME
+  echo "Init submodules"
+  yadm submodule update --recursive --init
+  popd
+}
+
+function bootstrap_common() {
+  source $HOME/.yadm/bootstrap-common.sh
+}
+
+function bootstrap_linux() {
+  source $HOME/.yadm/bootstrap-linux.sh
+}
+
+function bootstrap_osx() {
+  source $HOME/.yadm/bootstrap-osx.sh
+}
+
+submodules_init
+bootstrap_common
+if [[ $(uname -s) = "Darwin" ]]; then
+  bootstrap_osx
+elif [[ $(uname -s) = "Linux" ]]; then
+  bootstrap_linux
+else
+  echo "Unknown system"
+fi

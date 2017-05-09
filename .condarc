@@ -1,0 +1,43 @@
+anaconda_upload: no
+auto_update_conda: no
+show_channel_urls: yes
+
+channels:
+  - conda-forge
+  - rolando
+  - defaults
+
+#proxy_servers:
+#  http: localhost:8080
+#  https: localhost:8080
+
+# allow to mitmproxy'd conda
+#ssl_verify: false
+
+# diable auto-update of dependencies
+#update_dependencies: false
+
+# default packages on new env
+create_default_packages:
+  - ipython
+  - ipykernel
+  - ipywidgets
+  - ipdb
+  - notebook
+  # SSL security
+  - pyopenssl
+  - service_identity
+  #- ndg_httpsclient [py2]
+  # Base libraries for lxml.
+  - libxml2
+  - libxslt
+  - pytest
+  - pytest-cov
+  # for vim
+  - flake8
+  - pylint
+  - pyzmq
+  - cookiecutter
+
+track_features: 
+  - nomkl
