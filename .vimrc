@@ -10,13 +10,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
@@ -45,7 +44,7 @@ Plug 'yssl/QFEnter'
 " supertab
 "Plu
 Plug 'scrooloose/syntastic'
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 "Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 " supertab
 " vim-fugitive

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eux
 
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
@@ -11,7 +12,5 @@ if [[ $(uname -s) = "Darwin" ]]; then
   source $HOME/.yadm/bootstrap-osx.sh
 elif [[ $(uname -s) = "Linux" ]]; then
   source $HOME/.yadm/bootstrap-linux.sh
-else
-  echo "Unknown system"
 fi
 source $HOME/.yadm/bootstrap-post.sh
