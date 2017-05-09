@@ -59,6 +59,7 @@ zplug "plugins/systemd",   from:oh-my-zsh
 zplug "plugins/tmux",   from:oh-my-zsh, nice:10
 zplug "plugins/kubectl",   from:oh-my-zsh, nice:10
 zplug "plugins/vagrant",   from:oh-my-zsh
+zplug "plugins/vi-mode",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
 zplug "plugins/zsh_reload",   from:oh-my-zsh
 
@@ -115,6 +116,8 @@ if ! zplug check --verbose; then
     fi
 fi
 
+HIST_STAMPS="yyyy-mm-dd"
+
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
 
@@ -141,25 +144,6 @@ alias osxdnsflush="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 #[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
-
-
-bindkey -v
-bindkey -M vicmd "?" history-incremental-pattern-search-forward
-bindkey -M vicmd "/" history-incremental-pattern-search-backward
-bindkey -M vicmd v edit-command-line
-bindkey -M vicmd 'u' undo
-bindkey -M vicmd '^r' redo
-bindkey -M vicmd '~' vi-swap-case
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey '^[[Z' reverse-menu-complete
-bindkey '^l' clear-screen
-bindkey '^k' kill-line
-bindkey '^u' backward-kill-line
-bindkey '^r' history-incremental-search-backward
-bindkey '^p' history-search-backward
-bindkey '^n' insert-last-word
-bindkey '^?' backward-delete-char
 
 func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 
