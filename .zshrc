@@ -1,3 +1,11 @@
+export EDITOR='vim'
+# Explicit path to avoid surprises.
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export MANPATH="/usr/local/man:$MANPATH"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 source $HOME/.zplug/init.zsh
 
 # Plug OMZ plugins
@@ -46,10 +54,29 @@ if ! zplug check --verbose; then
     fi
 fi
 
-HIST_STAMPS="yyyy-mm-dd"
-
 # Then, source plugins and add commands to $PATH
 zplug load
+
+set bind-tty-special-chars off
+
+HIST_STAMPS="yyyy-mm-dd"
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt BANG_HIST
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+setopt HIST_BEEP
 
 #
 # END ZPLUG
@@ -61,15 +88,7 @@ setopt NO_NOMATCH  # stop zsh from catching ^ chars.
 setopt PROMPT_SUBST  # prompt substitution
 
 export ENHANCD_FILTER=fzf-tmux
-export EDITOR='vim'
 export CONDA_HOME=$HOME/miniconda
-
-# Explicit path to avoid surprises.
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
-export MANPATH="/usr/local/man:$MANPATH"
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 
 export WHEELHOUSE=$HOME/.pip/wheels
 export PIP_WHEEL_DIR=$WHEELHOUSE
