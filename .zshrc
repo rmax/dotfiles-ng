@@ -1,24 +1,23 @@
 source $HOME/.zplug/init.zsh
 
 # Plug OMZ plugins
-zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
-zplug "plugins/brew",   from:oh-my-zsh
-zplug "plugins/cp",   from:oh-my-zsh
-zplug "plugins/docker",   from:oh-my-zsh
-zplug "plugins/docker-compose",   from:oh-my-zsh
-zplug "plugins/fancy-ctrl-z",   from:oh-my-zsh
-zplug "plugins/git",   from:oh-my-zsh, defer:2
-zplug "plugins/history",   from:oh-my-zsh, defer:2
-zplug "plugins/httpie",   from:oh-my-zsh, defer:2
-zplug "plugins/rsync",   from:oh-my-zsh
-zplug "plugins/safe-paste",   from:oh-my-zsh
-zplug "plugins/shrink-path",   from:oh-my-zsh
-zplug "plugins/ssh-agent",   from:oh-my-zsh
-zplug "plugins/tmux",   from:oh-my-zsh, defer:2
-zplug "plugins/vi-mode",   from:oh-my-zsh
-zplug "plugins/z",   from:oh-my-zsh
-zplug "plugins/zsh-navigation-tools",   from:oh-my-zsh
-zplug "plugins/zsh_reload",   from:oh-my-zsh
+zplug "lib/*.zsh", from:oh-my-zsh
+zplug "plugins/brew",   from:oh-my-zsh, defer:1
+zplug "plugins/cp",   from:oh-my-zsh, defer:1
+zplug "plugins/docker",   from:oh-my-zsh, defer:1
+zplug "plugins/docker-compose",   from:oh-my-zsh, defer:1
+zplug "plugins/fancy-ctrl-z",   from:oh-my-zsh, defer:1
+zplug "plugins/git",   from:oh-my-zsh, defer:1
+zplug "plugins/history",   from:oh-my-zsh, defer:1
+zplug "plugins/httpie",   from:oh-my-zsh, defer:1
+zplug "plugins/rsync",   from:oh-my-zsh, defer:1
+zplug "plugins/safe-paste",   from:oh-my-zsh, defer:1
+zplug "plugins/shrink-path",   from:oh-my-zsh, defer:1
+zplug "plugins/ssh-agent",   from:oh-my-zsh, defer:1
+zplug "plugins/tmux",   from:oh-my-zsh, defer:1
+zplug "plugins/vi-mode",   from:oh-my-zsh, defer:1
+zplug "plugins/z",   from:oh-my-zsh, defer:1
+zplug "plugins/zsh-navigation-tools",   from:oh-my-zsh, defer:1
 
 # Plug other plugins
 zplug "Tarrasch/zsh-autoenv"
