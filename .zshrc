@@ -1,4 +1,3 @@
-export EDITOR='vim'
 # Explicit path to avoid surprises.
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 export MANPATH="/usr/local/man:$MANPATH"
@@ -10,10 +9,6 @@ source $HOME/.zplug/init.zsh
 
 # Plug OMZ plugins
 zplug "lib/*.zsh", from:oh-my-zsh
-zplug "plugins/brew",   from:oh-my-zsh, defer:1
-zplug "plugins/cp",   from:oh-my-zsh, defer:1
-zplug "plugins/docker",   from:oh-my-zsh, defer:1
-zplug "plugins/docker-compose",   from:oh-my-zsh, defer:1
 zplug "plugins/fancy-ctrl-z",   from:oh-my-zsh, defer:1
 zplug "plugins/git",   from:oh-my-zsh, defer:1
 zplug "plugins/history",   from:oh-my-zsh, defer:1
@@ -22,19 +17,18 @@ zplug "plugins/rsync",   from:oh-my-zsh, defer:1
 zplug "plugins/safe-paste",   from:oh-my-zsh, defer:1
 zplug "plugins/shrink-path",   from:oh-my-zsh, defer:1
 zplug "plugins/ssh-agent",   from:oh-my-zsh, defer:1
-zplug "plugins/tmux",   from:oh-my-zsh, defer:1
 zplug "plugins/vi-mode",   from:oh-my-zsh, defer:1
 zplug "plugins/z",   from:oh-my-zsh, defer:1
-zplug "plugins/zsh-navigation-tools",   from:oh-my-zsh, defer:1
 
 # Plug other plugins
 zplug "Tarrasch/zsh-autoenv"
+zplug "b4b4r07/enhancd", use:init.sh
 zplug "ndbroadbent/scm_breeze", hook-build:"$ZPLUG_HOME/repos/ndbroadbent/scm_breeze/install.sh"
 zplug "supercrabtree/k"
-zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions", use:src
-zplug "zsh-users/zsh-history-substring-search", defer:2
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting"
 
 # Plug commands
 zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
@@ -56,8 +50,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-set bind-tty-special-chars off
 
 HIST_STAMPS="yyyy-mm-dd"
 HISTFILE="$HOME/.zsh_history"
@@ -83,12 +75,17 @@ setopt HIST_BEEP
 #
 
 # options
-setopt MENU_COMPLETE  # select first menu option automatically
-setopt NO_NOMATCH  # stop zsh from catching ^ chars.
+setopt NO_NOMATCH
 setopt PROMPT_SUBST  # prompt substitution
+
+zstyle ':completion:*' menu 'select=0'
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 export ENHANCD_FILTER=fzf-tmux
 export CONDA_HOME=$HOME/miniconda
+export EDITOR=vim
 
 export WHEELHOUSE=$HOME/.pip/wheels
 export PIP_WHEEL_DIR=$WHEELHOUSE
