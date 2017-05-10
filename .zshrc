@@ -76,6 +76,9 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 setopt HIST_BEEP
 
+stty start undef # disable C-s
+stty stop undef
+
 #
 # END ZPLUG
 #

@@ -73,3 +73,5 @@
   fsckobjects = true
 [gist]
   home = ~/.gists
+[fsck]
+  zeroPaddedFilemode = ignore
