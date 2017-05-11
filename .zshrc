@@ -18,7 +18,6 @@ if [ -d "$ZPLUG_HOME" ]; then
   zplug "plugins/history",   from:oh-my-zsh, defer:1
   zplug "plugins/httpie",   from:oh-my-zsh, defer:1
   zplug "plugins/rsync",   from:oh-my-zsh, defer:1
-  zplug "plugins/safe-paste",   from:oh-my-zsh, defer:1
   zplug "plugins/shrink-path",   from:oh-my-zsh, defer:1
   zplug "plugins/ssh-agent",   from:oh-my-zsh, defer:1
   zplug "plugins/vi-mode",   from:oh-my-zsh, defer:1
