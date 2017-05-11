@@ -108,8 +108,8 @@ alias osxdnsflush="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;
 
 func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 
-[ -d "$ZPLUG_HOME/bin" ] && export PATH="$ZPLUG_HOME/bin/:$PATH"
-[ -d "$CONDA_HOME/bin" ] && export PATH="$CONDA_HOME/bin/:$PATH"
+[ -d "$ZPLUG_HOME/bin" ] && export PATH="$ZPLUG_HOME/bin:$PATH"
+[ -d "$CONDA_HOME/bin" ] && export PATH="$CONDA_HOME/bin:$PATH"
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
