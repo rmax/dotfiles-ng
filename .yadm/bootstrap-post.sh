@@ -1,14 +1,14 @@
 
 # VIM
-if command -v vim >/dev/null 2>&1; then
+if [ -x "$(command -v vim || true)" ]; then
   echo "Bootstraping Vim"
   mkdir -p $HOME/.local/share/vim/{swap,backup,undo}
   vim '+PlugClean' '+PlugInstall' '+PlugUpdate' '+qall'
 fi
 
 # Conda
-if command -v conda >/dev/null 2>&1; then
-  echo "Bootstraping Conda"
+if [ ! -x "$(command -v conda || true)" ]; then
+  echo "Installing Conda"
   CONDA_HOME=${CONDA_HOME:-"$HOME/miniconda"}
   if [ `uname -s` = "Darwin" ]; then
     CONDA_PLAT=MacOSX
