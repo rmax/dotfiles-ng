@@ -1,5 +1,10 @@
-sudo apt-get update
-sudo apt-get install -y \
+APTGET="apt-get"
+if [ ! `id -u` = 0 ]; then
+  APTGET="sudo $APTGET"
+fi
+
+$APTGET update
+$APTGET install -y \
   curl \
   exuberant-ctags \
   vim \

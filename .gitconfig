@@ -71,4 +71,5 @@
   showUntrackedFiles = all
 [transfer]
   fsckobjects = true
-
+[gist]
+  home = ~/.gists

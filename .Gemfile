@@ -1,0 +1,2 @@
+gem 'travis'
+gem 'gist'
