@@ -20,6 +20,6 @@ if command -v conda >/dev/null 2>&1; then
   rm -f /tmp/miniconda.sh
   $CONDA_HOME/bin/conda update -q -y conda
   if [ -f "$HOME/.Condafile" ]; then
-    $CONDA_HOME/bin/conda install -n root --file $HOME/.Condafile
+    $CONDA_HOME/bin/conda install -n root -q -y --file $HOME/.Condafile
   fi
 fi

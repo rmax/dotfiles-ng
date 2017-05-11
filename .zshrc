@@ -34,12 +34,13 @@ if [ -d "$ZPLUG_HOME" ]; then
   zplug "zsh-users/zsh-syntax-highlighting"
 
   # Plug shell scripts or small programs
-  zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
   zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
   zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*darwin*amd64*"
   zplug "k4rthik/git-cal", as:command
+  zplug "paulirish/git-open", as:command
   zplug "so-fancy/diff-so-fancy", as:command
-  zplug "weakish/gister", as:command, use:gister.sh, rename-to:gister
+  zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
+  zplug "rolando-contrib/gister", as:command, use:gister.sh, rename-to:gister
 
   # Plug theme
   zplug "oskarkrawczyk/honukai-iterm-zsh", as:theme
