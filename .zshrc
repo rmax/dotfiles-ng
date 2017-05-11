@@ -12,7 +12,7 @@ if [ -d "$ZPLUG_HOME" ]; then
   source $ZPLUG_HOME/init.zsh
 
   # Plug OMZ plugins
-  zplug "lib/*.zsh", from:oh-my-zsh
+  zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
   zplug "plugins/fancy-ctrl-z",   from:oh-my-zsh, defer:1
   zplug "plugins/git",   from:oh-my-zsh, defer:1
   zplug "plugins/history",   from:oh-my-zsh, defer:1
