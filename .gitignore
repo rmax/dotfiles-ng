@@ -15,3 +15,5 @@ cover/
 *.gz
 *.bz2
 *.xz
+
+.autoenv*
