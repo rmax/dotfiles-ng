@@ -24,10 +24,11 @@ if [ -d "$ZPLUG_HOME" ]; then
   zplug "plugins/z",   from:oh-my-zsh, defer:1
 
   # Plug other plugins
-  zplug "Tarrasch/zsh-autoenv"
   zplug "b4b4r07/enhancd", use:init.sh
+  zplug "chrissicool/zsh-256color"
   zplug "ndbroadbent/scm_breeze", hook-build:"$ZPLUG_REPOS/ndbroadbent/scm_breeze/install.sh"
   zplug "supercrabtree/k"
+  zplug "Tarrasch/zsh-autoenv"
   zplug "zsh-users/zsh-autosuggestions"
   zplug "zsh-users/zsh-completions", use:src
   zplug "zsh-users/zsh-history-substring-search"
@@ -95,6 +96,7 @@ bindkey '^[[B' history-substring-search-down
 
 export ENHANCD_FILTER=fzf-tmux
 export CONDA_HOME=$HOME/miniconda
+export RVM_HOME=$HOME/.rvm
 
 export WHEELHOUSE=$HOME/.pip/wheels
 export PIP_WHEEL_DIR=$WHEELHOUSE
@@ -110,8 +112,11 @@ func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 
 [ -d "$ZPLUG_HOME/bin" ] && export PATH="$ZPLUG_HOME/bin:$PATH"
 [ -d "$CONDA_HOME/bin" ] && export PATH="$CONDA_HOME/bin:$PATH"
+[ -d "$RVM_HOME/bin" ] && export PATH="$$RVM_HOME/bin:$PATH"
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 
-[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+[ -s "$RVM_HOME/scripts/rvm" ] && source "$RVM_HOME/scripts/rvm" 
+
 [ -s "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+[ -s "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"

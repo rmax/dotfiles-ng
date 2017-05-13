@@ -11,8 +11,3 @@ if [ -f "$HOME/.Brewfile" ]; then
 	echo "Updating homebrew bundle"
 	brew bundle --global
 fi
-
-if [ -f "$HOME/.Gemfile" ]; then
-  echo "Updating gems"
-  gem install -g $HOME/.Gemfile
-fi

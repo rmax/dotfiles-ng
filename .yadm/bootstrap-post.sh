@@ -23,3 +23,9 @@ if [ ! -x "$(command -v conda || true)" ]; then
     $CONDA_HOME/bin/conda install -n root -q -y --file $HOME/.Condafile
   fi
 fi
+
+# Gem-based utils
+if [ -f "$HOME/.Gemfile" ]; then
+  echo "Updating gems"
+  gem install -g $HOME/.Gemfile
+fi
