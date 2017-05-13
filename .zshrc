@@ -8,6 +8,35 @@ export LANG=en_US.UTF-8
 export ZPLUG_HOME="$HOME/.zplug"
 export ZPLUG_REPOS="$ZPLUG_HOME/repos"
 
+HIST_STAMPS="yyyy-mm-dd"
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt BANG_HIST
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+setopt HIST_BEEP
+
+stty start undef # disable C-s
+stty stop undef
+
+# options
+setopt NO_NOMATCH
+setopt PROMPT_SUBST  # prompt substitution
+
+zstyle ':completion:*' menu 'select=0'
+
+
 if [ -d "$ZPLUG_HOME" ]; then
   source $ZPLUG_HOME/init.zsh
 
@@ -22,6 +51,7 @@ if [ -d "$ZPLUG_HOME" ]; then
   zplug "plugins/ssh-agent",   from:oh-my-zsh, defer:1
   zplug "plugins/vi-mode",   from:oh-my-zsh, defer:1
   zplug "plugins/z",   from:oh-my-zsh, defer:1
+  zplug "plugins/zsh-navigation-tools", from:oh-my-zsh, defer:1
 
   # Plug other plugins
   zplug "b4b4r07/enhancd", use:init.sh
@@ -58,38 +88,9 @@ if [ -d "$ZPLUG_HOME" ]; then
   zplug load
 
 fi
-
-HIST_STAMPS="yyyy-mm-dd"
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000
-
-setopt BANG_HIST
-setopt EXTENDED_HISTORY
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_REDUCE_BLANKS
-setopt HIST_VERIFY
-setopt HIST_BEEP
-
-stty start undef # disable C-s
-stty stop undef
-
 #
 # END ZPLUG
 #
-
-# options
-setopt NO_NOMATCH
-setopt PROMPT_SUBST  # prompt substitution
-
-zstyle ':completion:*' menu 'select=0'
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
