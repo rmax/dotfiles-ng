@@ -19,6 +19,7 @@ channels:
 
 # default packages on new env
 create_default_packages:
+  # IPython goodies
   - ipython
   - ipykernel
   - ipywidgets
@@ -38,6 +39,10 @@ create_default_packages:
   - pylint
   - pyzmq
   - cookiecutter
+  # Data analysis
+  - pandas
+  - scikit-learn
+  - seaborn
 
 track_features: 
   - nomkl

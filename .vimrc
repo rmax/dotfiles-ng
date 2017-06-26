@@ -52,7 +52,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " vim-latex-suite
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" vim-surround
+Plug 'tpope/vim-surround'
 " vim-virtualenv
 
 call plug#end()

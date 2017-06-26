@@ -4,6 +4,7 @@ c.TerminalIPythonApp.display_banner = False
 
 c.TerminalInteractiveShell.cache_size = 0
 c.TerminalInteractiveShell.colors = 'Linux'
+c.TerminalInteractiveShell.editing_mode = 'vi'
 #c.TerminalInteractiveShell.pager = 'most'
 #c.TerminalInteractiveShell.confirm_exit = False
 

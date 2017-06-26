@@ -42,6 +42,7 @@ if [ -d "$ZPLUG_HOME" ]; then
 
   # Plug OMZ plugins
   zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
+  zplug "plugins/aws",   from:oh-my-zsh, defer:1
   zplug "plugins/fancy-ctrl-z",   from:oh-my-zsh, defer:1
   zplug "plugins/git",   from:oh-my-zsh, defer:1
   zplug "plugins/history",   from:oh-my-zsh, defer:1
@@ -121,3 +122,10 @@ func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 [ -s "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 [ -s "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
