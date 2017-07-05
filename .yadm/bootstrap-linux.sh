@@ -13,7 +13,7 @@ $APTGET install -qq -y \
   rake \
   ruby \
   ruby-dev \
-  zsh-beta
+  zsh
 
 if [ ! -x "$(command -v rvm || true)" ]; then
   curl -sSL https://get.rvm.io | bash -s stable --ruby
