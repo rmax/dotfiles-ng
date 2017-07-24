@@ -75,3 +75,5 @@
   home = ~/.gists
 [fsck]
   zeroPaddedFilemode = ignore
+[hub]
+	protocol = ssh
