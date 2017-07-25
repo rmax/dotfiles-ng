@@ -1,3 +1,12 @@
+umask 022
+limit coredumpsize 0
+bindkey -d
+
+# Return if zsh is called from vim
+if [[ -n $VIMRUNTIME ]]; then
+  return 0
+fi
+
 # Explicit path to avoid surprises.
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 export MANPATH="/usr/local/man:$MANPATH"
