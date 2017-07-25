@@ -29,7 +29,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug 'Valodim/zsh-curl-completion'
 
 # Plug shell scripts or small programs
-zplug "BurntSushi/ripgrep", from:gh-r, as:command, use:rg, frozen:1
+zplug "BurntSushi/ripgrep", from:gh-r, as:command, rename-to:rg, at:0.5.2
 zplug "b4b4r07/httpstat", as:command, use:'(*).sh', rename-to:'$1'
 zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*darwin*amd64*", frozen:1
