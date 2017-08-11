@@ -30,6 +30,7 @@ Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'wincent/command-t', {'do': 'rake make'}
 
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'klen/python-mode', {'for': 'python'}
@@ -296,6 +297,7 @@ let g:SuperTabContextDefaultCompletionType = '<c-p>'
 let g:SuperTabMappingTabLiteral = '<c-tab>'
 
 " python-mode
+let g:pymode_rope = 0
 let g:pymode_rope_goto_definition_cmd = 'new'
 let g:pymode_rope_lookup_project = 1
 let g:pymode_rope_complete_on_dot = 0
