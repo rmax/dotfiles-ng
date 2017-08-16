@@ -7,7 +7,7 @@ if [ -x "$(command -v vim || true)" ]; then
 fi
 
 # Conda
-if [ ! -x "$(command -v conda || true)" ]; then
+if [ ! -d "$HOME/miniconda" ]; then
   echo "Installing Conda"
   CONDA_HOME=${CONDA_HOME:-"$HOME/miniconda"}
   if [ `uname -s` = "Darwin" ]; then
@@ -15,7 +15,7 @@ if [ ! -x "$(command -v conda || true)" ]; then
   else
     CONDA_PLAT=Linux
   fi
-  wget https://repo.continuum.io/miniconda/Miniconda3-latest-${CONDA_PLAT}-x86_64.sh -O /tmp/miniconda.sh;
+  wget https://repo.continuum.io/miniconda/Miniconda3-latest-${CONDA_PLAT}-x86_64.sh -O - > /tmp/miniconda.sh;
   bash /tmp/miniconda.sh -b -p $CONDA_HOME
   rm -f /tmp/miniconda.sh
   $CONDA_HOME/bin/conda update -q -y conda
@@ -27,5 +27,5 @@ fi
 # Gem-based utils
 if [ -f "$HOME/.Gemfile" ]; then
   echo "Updating gems"
-  gem install -g $HOME/.Gemfile
+  gem install --user-install -g $HOME/.Gemfile
 fi
