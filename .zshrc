@@ -18,7 +18,7 @@ export ZSH_FILES="$HOME/.zsh"
 export ZPLUG_HOME="$HOME/.zplug"
 export ZPLUG_REPOS="$ZPLUG_HOME/repos"
 export ZPLUG_SUDO_PASSWORD=
-export ZPLUG_PROTOCOL=ssh
+export ZPLUG_PROTOCOL=https
 
 HIST_STAMPS="yyyy-mm-dd"
 HISTFILE="$HOME/.zsh_history"

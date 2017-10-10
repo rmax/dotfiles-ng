@@ -56,6 +56,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
 " vim-virtualenv
 
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 " Tell vim to remember certain things when we exit
@@ -325,3 +327,7 @@ ca th tabprev
 ca tl tabnext
 
 let g:netrw_gx="<cWORD>"
+
+nmap <F1> <nop>
+map <F1> <Esc>
+imap <F1> <Esc>
