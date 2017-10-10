@@ -18,15 +18,19 @@ zplug "Tarrasch/zsh-autoenv"
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "b4b4r07/zsh-vimode-visual", use:"*.zsh", defer:3
 zplug "chrissicool/zsh-256color"
-zplug "glidenote/hub-zsh-completion"
 zplug "ndbroadbent/scm_breeze", hook-build:"$ZPLUG_REPOS/ndbroadbent/scm_breeze/install.sh"
 zplug "pyinvoke/invoke", use:"completion/zsh"
 zplug "srijanshetty/zsh-pip-completion"
 zplug "supercrabtree/k"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions", use:src
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
+
+# Plug completions
+zplug "esc/conda-zsh-completion"
+zplug "glidenote/hub-zsh-completion"
+zplug "srijanshetty/zsh-pip-completion"
+zplug "zsh-users/zsh-completions", use:src
 zplug 'Valodim/zsh-curl-completion'
 
 # Plug shell scripts or small programs
