@@ -57,6 +57,7 @@ Plug 'tpope/vim-surround'
 " vim-virtualenv
 
 Plug 'jiangmiao/auto-pairs'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
