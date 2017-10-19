@@ -17,11 +17,13 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 
+Plug 'jez/vim-github-hub'
+
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep'
 
 Plug 'rking/ag.vim'
 
@@ -31,6 +33,7 @@ Plug 'wincent/command-t', {'do': 'rake make'}
 
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'klen/python-mode', {'for': 'python'}
