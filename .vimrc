@@ -22,6 +22,7 @@ Plug 'jez/vim-github-hub'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
 
+Plug 'junegunn/fzf', {'dir': '~/.zplug/repos/junegunn/fzf'}
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 
