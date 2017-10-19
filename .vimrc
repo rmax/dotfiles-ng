@@ -43,8 +43,8 @@ Plug 'yssl/QFEnter'
 " lusty
 " sparkup
 " supertab
-"Plu
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 "Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 " supertab
