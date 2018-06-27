@@ -58,10 +58,16 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 " vim-virtualenv
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'ludovicchabant/vim-gutentags'
+
+Plug 'cocopon/iceberg.vim'
+
+" Iosvkem colour scheme
+Plug 'neutaaaaan/iosvkem'
 
 call plug#end()
 
@@ -181,7 +187,8 @@ endif
 " 8 colors: torte desert delek koehler peachpuff zellner
 " 256 colors: darkburn desert256 inkpot zenburn graywh
 if &t_Co >= 256
-  colorscheme wombat256mod
+  "colorscheme Iosvkem
+  colorscheme inkpot
 else
   colorscheme graywh
 endif
@@ -241,7 +248,7 @@ autocmd BufReadPost * if exists('b:reload_dos') | unlet b:reload_dos | endif
 " highlight >80 chars columns, error msg on >100 chars.
 nnoremap <Leader>H :call<SID>LongLineHLToggle()<cr>
 hi OverLength ctermbg=none cterm=none
-match OverLength /\%>80v/
+match OverLength /\%>88v/
 fun! s:LongLineHLToggle()
  if !exists('w:longlinehl')
   let w:longlinehl = matchadd('ErrorMsg', '.\%>100v', 0)
@@ -302,28 +309,6 @@ let g:jedi#use_tabs_not_buffers = 1
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-p>'
 let g:SuperTabMappingTabLiteral = '<c-tab>'
-
-" python-mode
-let g:pymode_rope = 0
-let g:pymode_rope_goto_definition_cmd = 'new'
-let g:pymode_rope_lookup_project = 1
-let g:pymode_rope_complete_on_dot = 0
-" avoid to modify exiting files
-let g:pymode_utils_whitespaces = 0
-" ignore common spaces-related warnings when working with legacy code:
-"   E128 continuation line under-indented for visual indent
-"   E225 missing whitespace around operator
-"   E231 missing whitespace after ',;:'
-"   E251 no spaces around keyword / parameter equals
-"   E261 at least two spaces before inline comment
-"   E262 inline comment should start with '# '
-"   E301 expected one blank line
-"   E303 too many blank lines
-"   E401 multiple imports on one line
-"   E501 line too long
-"   W391 blank line at end of file
-let g:pymode_lint_ignore='E128,E225,E231,E251,E261,E262,E301,E303,E401,E501,W391'
-let g:pymode_options_max_line_length = 99
 
 set tags=./.tags,.tags;
 
