@@ -321,5 +321,8 @@ let g:netrw_gx="<cWORD>"
 nmap <F1> <nop>
 map <F1> <Esc>
 imap <F1> <Esc>
+vmap <F1> <Esc>
+cmap <F1> <Esc>
+omap <F1> <Esc>
 
 set clipboard=unnamed
