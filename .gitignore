@@ -17,3 +17,11 @@ cover/
 *.xz
 
 .autoenv*
+
+# node stuff
+node_modules/
+
+# terraform stuff
+.terraform/
+
+.autoenv.zsh

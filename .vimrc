@@ -28,13 +28,18 @@ Plug 'jremmen/vim-ripgrep'
 
 Plug 'rking/ag.vim'
 
-Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-
 Plug 'wincent/command-t', {'do': 'rake make'}
 
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+
+Plug 'Shougo/deoplete.nvim'
+"Plug 'Shougo/echodoc.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'Shougo/neosnippet'
+"Plug 'Shougo/neosnippet-snippets'
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'klen/python-mode', {'for': 'python'}
@@ -42,7 +47,17 @@ Plug 'cjrh/vim-conda', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug '5long/pytest-vim-compiler', {'for': 'python'}
 
+" javascript
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'flowtype/vim-flow', {'for': 'javascript'}
+Plug 'wokalski/autocomplete-flow', {'for': 'javascript'}
+
+Plug 'chrisbra/NrrwRgn'
 Plug 'yssl/QFEnter'
+
+" Terraform
+Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
 
 " lusty
 " sparkup
@@ -68,6 +83,20 @@ Plug 'cocopon/iceberg.vim'
 
 " Iosvkem colour scheme
 Plug 'neutaaaaan/iosvkem'
+
+Plug 'prettier/vim-prettier'
+
+Plug 'plasticboy/vim-markdown'
+
+"Plug 'xavierchow/vim-swagger-preview'
+
+Plug 'dhruvasagar/vim-open-url'
+
+Plug 'sheerun/vim-polyglot'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'luochen1990/rainbow'
 
 call plug#end()
 
@@ -197,7 +226,11 @@ endif
 highlight ColorColumn ctermbg=8
 
 " highlight trailing whitespaces
+highlight ExtraWhitespace ctermbg=lightgreen guibg=lightgreen
 
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
 " gui-only stuff
 if has('gui_running')
@@ -301,14 +334,31 @@ let g:Powerline_symbols='compatible'
 let g:syntastic_disabled_filetypes=['python']
 
 " jedi-vim
-let g:jedi#popup_on_dot = 1
-let g:jedi#autocompletions_command = '<c-space>'
-let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+"let g:jedi#autocompletions_command = '<c-space>'
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+let g:jedi#show_call_signatures_delay = 0
+let g:jedi#show_call_signatures_modes = "i"
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#enable_speed_debugging = 0
 
 " supertab
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-p>'
 let g:SuperTabMappingTabLiteral = '<c-tab>'
+
+" terraform
+let g:terraform_align = 1
+let g:terraform_fold_sections = 1
+let g:terraform_fmt_on_save = 1
+
+" gutentags
+let g:gutentags_ctags_tagfile = '.tags'
 
 set tags=./.tags,.tags;
 
@@ -326,3 +376,9 @@ cmap <F1> <Esc>
 omap <F1> <Esc>
 
 set clipboard=unnamed
+
+" vim-swagger-preview
+"nmap <unique> <leader>g <Plug>GenerateDiagram
+
+"set cmdheight=2
+"let g:echodoc#enable_at_startup=1

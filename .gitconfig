@@ -1,6 +1,6 @@
 [user]
-  name = Rolando (Max) Espinoza
-  email = "me@rmax.io"
+	name = R. Max Espinoza
+	email = me@rmax.io
 
 [alias]
   co = checkout
@@ -20,6 +20,7 @@
     branch = auto
     diff = auto
     status = auto
+	ui = true
 [color "branch"]
     current = yellow reverse
     local = yellow
@@ -36,16 +37,18 @@
 [commit]
   template = ~/.gitmessage
 [core]
+  compression = 9
   editor = vim
   excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = less -r
 [push]
   default = simple
   followTags = true
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process
 [cola]
   fontdiff = Monaco,12,-1,5,50,0,0,0,0,0
   tabwidth = 4
@@ -59,22 +62,26 @@
   cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
 [difftool "icdiff"]
   cmd = icdiff --line-numbers $LOCAL $REMOTE
+[fetch]
+  depth = 10
 [merge]
-  tool = meld
+	tool = meld
   ff = only
   conflictstyle = diff3
 [mergetool]
   prompt = false
 [mergetool "meld"]
   trustExitCode = true
-  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+	cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 [status]
   showUntrackedFiles = all
 [transfer]
-  fsckobjects = true
+  fsckobjects = false
 [gist]
   home = ~/.gists
 [fsck]
   zeroPaddedFilemode = ignore
 [hub]
   protocol = ssh
+[url "git@github.com:"]
+	insteadOf = https://github.com/

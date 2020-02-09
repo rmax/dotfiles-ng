@@ -1,4 +1,16 @@
+# vi:ft=gitcommit:tw=72:sw=2:ts=2:expandtab:spell
+#
+# 50-character subject line
+#
+# If applied, this commit will...
 
+# 72-character wrapped longer description.
+#
+# Why is this change needed?
+
+# How does it address the issue?
+
+# Provide links to any relevant tickets, articles or other resources
 
 # The first line of the commit message starts with a capitalized acronym
 # (options listed below) indicating what type of commit this is.  Then a

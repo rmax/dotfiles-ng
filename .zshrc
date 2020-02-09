@@ -22,22 +22,22 @@ export ZPLUG_PROTOCOL=https
 
 HIST_STAMPS="yyyy-mm-dd"
 HISTFILE="$HOME/.zsh_history"
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=200000
+SAVEHIST=200000
 
 setopt BANG_HIST
 setopt EXTENDED_HISTORY
+setopt HIST_BEEP
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_REDUCE_BLANKS
-setopt HIST_VERIFY
-setopt HIST_BEEP
 
 stty start undef # disable C-s
 stty stop undef
@@ -62,7 +62,7 @@ if [ -d "$ZPLUG_HOME" ]; then
   fi
 
   # Then, source plugins and add commands to $PATH
-  zplug load
+  zplug load  #--verbose
 
 fi
 #
@@ -85,15 +85,21 @@ export EDITOR=vim
 
 alias vi="nocorrect vim"
 alias osxdnsflush="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed"
+alias tf="terraform"
+alias v="nocorrect vim"
 
 func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+[ -f "$HOME/.theme" ] && source "$HOME/.theme"
 
 [ -d "$ZPLUG_HOME/bin" ] && export PATH="$ZPLUG_HOME/bin:$PATH"
 [ -d "$CONDA_HOME/bin" ] && export PATH="$CONDA_HOME/bin:$PATH"
 [ -d "$RVM_HOME/bin" ] && export PATH="$$RVM_HOME/bin:$PATH"
+
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
+[ -d "$HOME/go" ] && export GOPATH="$HOME/go:$GOPATH"
+[ -d "$HOME/.cargo" ] && export PATH="$HOME/.cargo/bin:$PATH"
 
 [ -s "$RVM_HOME/scripts/rvm" ] && source "$RVM_HOME/scripts/rvm" 
 
@@ -107,3 +113,18 @@ func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+[ -d "$HOME/.nvm" ] && export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # homebrew location
+
+[ -d "$HOME/.rbenv" ] && eval "$(rbenv init -)"
+
+export TF_GLOBAL_DIR="${HOME}/.terraform"
+export TF_PLUGIN_DIR="${TF_GLOBAL_DIR}/plugins"
+
+# FZF
+export BAT_THEME="TwoDark"
+export FZF_COMPLETION_OPTS="--preview '(bat --color=always {} || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_T_OPTS="$FZF_COMPLETION_OPTS"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
