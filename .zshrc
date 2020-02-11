@@ -98,7 +98,7 @@ func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 [ -d "$RVM_HOME/bin" ] && export PATH="$$RVM_HOME/bin:$PATH"
 
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
-[ -d "$HOME/go" ] && export GOPATH="$HOME/go:$GOPATH"
+[ -d "$HOME/go" ] && export GOPATH="$HOME/go"
 [ -d "$HOME/.cargo" ] && export PATH="$HOME/.cargo/bin:$PATH"
 
 [ -s "$RVM_HOME/scripts/rvm" ] && source "$RVM_HOME/scripts/rvm" 
