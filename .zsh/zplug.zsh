@@ -30,7 +30,7 @@ zplug "plugins/jira",   from:oh-my-zsh, defer:1
 zplug "plugins/man",   from:oh-my-zsh, defer:1
 zplug "plugins/node",   from:oh-my-zsh, defer:1
 zplug "plugins/npm",   from:oh-my-zsh, defer:1
-zplug "plugins/npx",   from:oh-my-zsh, defer:1
+#zplug "plugins/npx",   from:oh-my-zsh, defer:1
 zplug "plugins/nvm",   from:oh-my-zsh, defer:1
 zplug "plugins/osx",   from:oh-my-zsh, defer:1
 zplug "plugins/otp",   from:oh-my-zsh, defer:1

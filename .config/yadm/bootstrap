@@ -1,19 +1,26 @@
 #!/bin/bash
-set -e
+set -eux
 
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
-pushd $HOME
-echo "Init submodules"
+# TODO: Is this still needed?
+#pushd $HOME
+
+OSTYPE=$(uname -s)
+case $OSTYPE in
+  Darwin)
+    BOOTSTRAP_OS=osx
+    ;;
+  *)
+    BOOTSTRAP_OS=linux
+    ;;
+esac
+
+BOOTSTRAP_DIR=${BOOTSTRAP_DIR:-"${HOME}/.bootstrap.d"}
+
 yadm submodule update --recursive --init
 
-echo "Bootstrapping system"
-source $HOME/.yadm/bootstrap-pre.sh
-if [[ $(uname -s) = "Darwin" ]]; then
-  source $HOME/.yadm/bootstrap-osx.sh
-elif [[ $(uname -s) = "Linux" ]]; then
-  source $HOME/.yadm/bootstrap-linux.sh
-fi
-source $HOME/.yadm/bootstrap-post.sh
-
-echo "Done!"
+for SOURCE in ${BOOTSTRAP_DIR}/*.sh; do
+  #env bash -c "set -eux; source ${SOURCE}"
+  source ${SOURCE}
+done
