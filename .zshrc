@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 umask 022
 limit coredumpsize 0
 bindkey -d
@@ -68,18 +75,20 @@ fi
 #
 # END ZPLUG
 #
+autoload -U compinit && compinit
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 export ENHANCD_FILTER=fzf-tmux
-export CONDA_HOME=$HOME/miniconda
 export RVM_HOME=$HOME/.rvm
 
 export WHEELHOUSE=$HOME/.pip/wheels
 export PIP_WHEEL_DIR=$WHEELHOUSE
 export PIP_FIND_LINKS=$WHEELHOUSE
 export TOX_TESTENV_PASSENV="WHEELHOUSE PIP_WHEEL_DIR PIP_FIND_LINKS"
+
+[[ -d $WHEELHOUSE ]] || mkdir -p $WHEELHOUSE
 
 export EDITOR=vim
 
@@ -146,3 +155,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+[ -s "/Users/max/.scm_breeze/scm_breeze.sh" ] && source "/Users/max/.scm_breeze/scm_breeze.sh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

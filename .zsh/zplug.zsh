@@ -13,7 +13,7 @@ zplug "plugins/docker",   from:oh-my-zsh, defer:1
 zplug "plugins/docker-compose",   from:oh-my-zsh, defer:1
 zplug "plugins/encode64",   from:oh-my-zsh, defer:1
 zplug "plugins/git",   from:oh-my-zsh, defer:1
-zplug "plugins/git-escape-magic",   from:oh-my-zsh, defer:1
+#zplug "plugins/git-escape-magic",   from:oh-my-zsh, defer:1
 zplug "plugins/git-extras",   from:oh-my-zsh, defer:1
 zplug "plugins/git-flow",   from:oh-my-zsh, defer:1
 zplug "plugins/git-hubflow",   from:oh-my-zsh, defer:1
@@ -31,7 +31,7 @@ zplug "plugins/man",   from:oh-my-zsh, defer:1
 zplug "plugins/node",   from:oh-my-zsh, defer:1
 zplug "plugins/npm",   from:oh-my-zsh, defer:1
 #zplug "plugins/npx",   from:oh-my-zsh, defer:1
-zplug "plugins/nvm",   from:oh-my-zsh, defer:1
+#zplug "plugins/nvm",   from:oh-my-zsh, defer:1
 zplug "plugins/osx",   from:oh-my-zsh, defer:1
 zplug "plugins/otp",   from:oh-my-zsh, defer:1
 zplug "plugins/pass",   from:oh-my-zsh, defer:1
@@ -70,8 +70,8 @@ zplug "supercrabtree/k"
 
 # Plug completions
 zplug "esc/conda-zsh-completion"
-zplug "glidenote/hub-zsh-completion"
-zplug "pyinvoke/invoke", use:"completion/"
+#zplug "glidenote/hub-zsh-completion"
+#zplug "pyinvoke/invoke", use:"completion/"
 zplug "srijanshetty/zsh-pip-completion"
 zplug 'Valodim/zsh-curl-completion'
 
@@ -94,9 +94,13 @@ zplug "github/hub", from:gh-r, as:command, at:v2.12.3, frozen:1
 zplug "oskarkrawczyk/honukai-iterm-zsh", as:theme
 
 # Powerline
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # Node stack
 
 # Openapi
 zplug "xavierchow/vim-swagger-preview", use:.zshenv
+
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+
+zplug "romkatv/powerlevel10k", as:theme, depth:1

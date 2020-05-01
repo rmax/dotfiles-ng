@@ -47,7 +47,7 @@
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-  required = true
+	required = true
 	process = git-lfs filter-process
 [cola]
   fontdiff = Monaco,12,-1,5,50,0,0,0,0,0

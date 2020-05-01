@@ -63,11 +63,10 @@ Plug 'juliosueiras/vim-terraform-completion'
 " sparkup
 " supertab
 "Plug 'scrooloose/syntastic'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 "Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 " supertab
-" vim-fugitive
 " vim-ipython
 " vim-latex-suite
 Plug 'vim-airline/vim-airline'
@@ -299,7 +298,8 @@ endfunction
 
 " complete default opts
 set complete=.,w,b,u,i
-set completeopt=longest,menuone,preview
+"set completeopt=longest,menuone,preview
+set completeopt=longest,menu,menuone,preview,noselect,noinsert
 
 " folding shortcuts
 nnoremap  <space> za

@@ -11,6 +11,7 @@ ipywidgets
 libxml2
 libxslt
 notebook
+pudb
 pylint
 pyopenssl
 pytest
