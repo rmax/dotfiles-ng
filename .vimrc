@@ -102,6 +102,8 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 
+Plug 'alok/notational-fzf-vim'
+
 call plug#end()
 
 " Tell vim to remember certain things when we exit
