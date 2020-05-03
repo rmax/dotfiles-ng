@@ -1,0 +1,28 @@
+# Exclude patterns
+--glob=!git/*
+--glob=!**/node_modules/*
+--glob=!**/__snapshots__/*
+
+# disregard build files (domain specific)
+--glob=!**/bin/*
+--glob=!**/build/*
+--glob=!**/dist/*
+--glob=!**/plugin-dist/*
+--glob=!**/cdp-plugin-lib.*
+--glob=!**/spr-cdp.*
+
+# disregard source maps
+--glob=!**/*.js.map
+--glob=!**/vendor/*
+
+# disregard ctags
+--glob=!tags
+
+# file types
+--type-add=tests:*.{test.js,spec.js,story.js}
+--type-add=tests:test_*.py
+--type-add=graqhql:*.{graphql,gql}
+--type-add=components:**/components/*
+
+# ingore case, unless case is used in the search term
+--smart-case

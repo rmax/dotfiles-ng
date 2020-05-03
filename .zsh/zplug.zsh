@@ -41,7 +41,7 @@ zplug "plugins/rsync",   from:oh-my-zsh, defer:1
 zplug "plugins/shrink-path",   from:oh-my-zsh, defer:1
 zplug "plugins/ssh-agent",   from:oh-my-zsh, defer:1
 zplug "plugins/terraform",   from:oh-my-zsh, defer:1
-zplug "plugins/textmate",   from:oh-my-zsh, defer:1
+zplug "plugins/textmate",   from:oh-my-zsh, defer
 zplug "plugins/thefuck",   from:oh-my-zsh, defer:1
 zplug "plugins/tig",   from:oh-my-zsh, defer:1
 zplug "plugins/timer",   from:oh-my-zsh, defer:1
@@ -61,7 +61,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "MichaelAquilina/zsh-you-should-use"
 zplug "Tarrasch/zsh-autoenv"
 zplug "b4b4r07/enhancd", use:init.sh
-zplug "b4b4r07/emoji-cli"
+zplug "b4b4r07/emoji-cli", as:command
 zplug "b4b4r07/httpstat", as:command, use:'(*).sh', rename-to:'$1'
 zplug "b4b4r07/zsh-vimode-visual", use:"*.zsh", defer:3
 zplug "chrissicool/zsh-256color"
@@ -86,9 +86,6 @@ zplug "peco/peco", as:command, from:gh-r, frozen:1
 zplug "rmax-contrib/gister", as:command, use:gister.sh, rename-to:gister
 zplug "so-fancy/diff-so-fancy", as:command
 zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
-# TODO: Check always for release. For now we stick at the prerelease as zplug
-# defaults to the latest release.
-zplug "github/hub", from:gh-r, as:command, at:v2.12.3, frozen:1
 
 # Plug theme
 zplug "oskarkrawczyk/honukai-iterm-zsh", as:theme
@@ -103,4 +100,6 @@ zplug "xavierchow/vim-swagger-preview", use:.zshenv
 
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
-zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "romkatv/powerlevel10k", as:theme
+
+zplug "erikw/tmux-powerline"

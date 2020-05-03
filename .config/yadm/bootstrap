@@ -21,6 +21,7 @@ BOOTSTRAP_DIR=${BOOTSTRAP_DIR:-"${HOME}/.bootstrap.d"}
 yadm submodule update --recursive --init
 
 for SOURCE in ${BOOTSTRAP_DIR}/*.sh; do
-  #env bash -c "set -eux; source ${SOURCE}"
   source ${SOURCE}
 done
+
+echo "Done! :tada:"

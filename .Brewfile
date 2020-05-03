@@ -126,4 +126,3 @@ brew 'p7zip'
 cask 'vagrant'
 
 brew 'pyenv'
-brew 'pipenv'

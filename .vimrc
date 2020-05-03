@@ -85,6 +85,7 @@ Plug 'neutaaaaan/iosvkem'
 
 Plug 'prettier/vim-prettier'
 
+Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 "Plug 'xavierchow/vim-swagger-preview'
@@ -227,6 +228,8 @@ endif
 
 " column dark grey
 highlight ColorColumn ctermbg=8
+
+set colorcolumn=80
 
 " highlight trailing whitespaces
 highlight ExtraWhitespace ctermbg=lightgreen guibg=lightgreen

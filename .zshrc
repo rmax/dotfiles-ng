@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 umask 022
 limit coredumpsize 0
 bindkey -d
@@ -12,6 +5,18 @@ bindkey -d
 # Return if zsh is called from vim
 if [[ -n $VIMRUNTIME ]]; then
   return 0
+fi
+
+# For some reason I get this error on newer installation. Probably has to do
+# # zsh version or who knows :shrug:. Found the fix in github ^_^.
+# # fix: (eval):setopt:3: no such option: NO_warnnestedvar
+#export _comp_options="${_comp_options/NO_warnnestedvar/}"
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Explicit path to avoid surprises.
@@ -27,11 +32,15 @@ export ZPLUG_REPOS="$ZPLUG_HOME/repos"
 export ZPLUG_SUDO_PASSWORD=
 export ZPLUG_PROTOCOL=https
 
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 HIST_STAMPS="yyyy-mm-dd"
+# TODO: move history file to ~/.zsh/
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=200000
 SAVEHIST=200000
 
+# TODO: move to configs to ~/.zsh/rc.d/*
 setopt BANG_HIST
 setopt EXTENDED_HISTORY
 setopt HIST_BEEP
@@ -55,6 +64,8 @@ setopt PROMPT_SUBST  # prompt substitution
 
 zstyle ':completion:*' menu 'select=0'
 
+# Fix titles in tmux.
+export DISABLE_AUTO_TITLE=true
 
 if [ -d "$ZPLUG_HOME" ]; then
   export ZPLUG_LOADFILE="$ZSH_FILES/zplug.zsh"
@@ -90,7 +101,9 @@ export TOX_TESTENV_PASSENV="WHEELHOUSE PIP_WHEEL_DIR PIP_FIND_LINKS"
 
 [[ -d $WHEELHOUSE ]] || mkdir -p $WHEELHOUSE
 
-export EDITOR=vim
+export VISUAL=vim
+export EDITOR=$VISUAL
+export BROWSER=open
 
 alias vi="nocorrect vim"
 alias osxdnsflush="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed"
@@ -160,3 +173,5 @@ unset __conda_setup
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(pyenv init -)"
