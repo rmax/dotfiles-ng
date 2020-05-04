@@ -3,104 +3,84 @@
 "
 set nocompatible
 
+" for signify faster refresh
+set updatetime=500
+
 let g:plug_shallow = 1
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-sensible'
-
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-
-
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-
-Plug 'jez/vim-github-hub'
-
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-github-dashboard'
-
-Plug 'junegunn/fzf', {'dir': '~/.zplug/repos/junegunn/fzf'}
-Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep'
-
-Plug 'rking/ag.vim'
-
-Plug 'wincent/command-t', {'do': 'rake make'}
-
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-
-Plug 'Shougo/deoplete.nvim'
-"Plug 'Shougo/echodoc.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-"Plug 'Shougo/neosnippet'
-"Plug 'Shougo/neosnippet-snippets'
-
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'klen/python-mode', {'for': 'python'}
-Plug 'cjrh/vim-conda', {'for': 'python'}
-Plug 'nvie/vim-flake8', {'for': 'python'}
-Plug '5long/pytest-vim-compiler', {'for': 'python'}
-
-" javascript
-Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'flowtype/vim-flow', {'for': 'javascript'}
-Plug 'wokalski/autocomplete-flow', {'for': 'javascript'}
-
-Plug 'chrisbra/NrrwRgn'
-Plug 'yssl/QFEnter'
-
+" Iosvkem colour scheme
 " Terraform
-Plug 'hashivim/vim-terraform'
-Plug 'juliosueiras/vim-terraform-completion'
-
+" javascript
 " lusty
 " sparkup
 " supertab
-"Plug 'scrooloose/syntastic'
-Plug 'dense-analysis/ale'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-"Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 " supertab
 " vim-ipython
 " vim-latex-suite
+" vim-virtualenv
+"Plug 'Shougo/echodoc.nvim'
+"Plug 'Shougo/neosnippet'
+"Plug 'Shougo/neosnippet-snippets'
+"Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+"Plug 'jremmen/vim-ripgrep'
+"Plug 'scrooloose/syntastic'
+"Plug 'xavierchow/vim-swagger-preview'
+Plug '5long/pytest-vim-compiler', {'for': 'python'}
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'Shougo/deoplete.nvim'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'airblade/vim-rooter'
+Plug 'chrisbra/NrrwRgn'
+Plug 'cjrh/vim-conda', {'for': 'python'}
+Plug 'cocopon/iceberg.vim'
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'dense-analysis/ale'
+Plug 'dhruvasagar/vim-open-url'
+Plug 'fatih/vim-go'
+Plug 'flowtype/vim-flow', {'for': 'javascript'}
+Plug 'garbas/vim-snipmate'
+Plug 'godlygeek/tabular'
+Plug 'hashivim/vim-terraform'
+Plug 'jamessan/vim-gnupg'
+Plug 'jez/vim-github-hub'
+Plug 'jiangmiao/auto-pairs'
+Plug 'juliosueiras/vim-terraform-completion'
+Plug 'junegunn/fzf', {'dir': '~/.zplug/repos/junegunn/fzf', 'do': { -> fzf#install() }}
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-github-dashboard'
+Plug 'klen/python-mode', {'for': 'python'}
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'luochen1990/rainbow'
+Plug 'mhinz/vim-signify'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neutaaaaan/iosvkem'
+Plug 'nvie/vim-flake8', {'for': 'python'}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'plasticboy/vim-markdown'
+Plug 'prettier/vim-prettier'
+Plug 'rking/ag.vim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'sheerun/vim-polyglot'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-" vim-virtualenv
-
-Plug 'jiangmiao/auto-pairs'
-Plug 'ludovicchabant/vim-gutentags'
-
-Plug 'cocopon/iceberg.vim'
-
-" Iosvkem colour scheme
-Plug 'neutaaaaan/iosvkem'
-
-Plug 'prettier/vim-prettier'
-
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-
-"Plug 'xavierchow/vim-swagger-preview'
-
-Plug 'dhruvasagar/vim-open-url'
-
-Plug 'sheerun/vim-polyglot'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'luochen1990/rainbow'
-
-Plug 'fatih/vim-go'
-Plug 'rust-lang/rust.vim'
-Plug 'JuliaEditorSupport/julia-vim'
+Plug 'wincent/command-t', {'do': 'rake make'}
+Plug 'wokalski/autocomplete-flow', {'for': 'javascript'}
+Plug 'yssl/QFEnter'
 
 Plug 'alok/notational-fzf-vim'
 

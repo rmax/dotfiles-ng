@@ -317,7 +317,7 @@
       },
       "Blur" : true,
       "Vertical Spacing" : 1,
-      "Normal Font" : "MesloLGS-NF-Regular 14",
+      "Normal Font" : "MesloLGSNerdFontCompleteM-Regular 12",
       "Ansi 7 Color" : {
         "Green Component" : 0.93353169999999996,
         "Red Component" : 0.93353169999999996,
@@ -344,11 +344,11 @@
       "Minimum Contrast" : 0,
       "Open Toolbelt" : false,
       "Ansi 6 Color" : {
-        "Green Component" : 0.77254900000000004,
-        "Red Component" : 0.77647060000000001,
-        "Blue Component" : 0.99607840000000003
+        "Green Component" : 0.75,
+        "Red Component" : 0.75,
+        "Blue Component" : 1.00
       },
-      "Transparency" : 0.24234612944162434,
+      "Transparency" : 0.10,
       "Background Color" : {
         "Green Component" : 0,
         "Red Component" : 0,
