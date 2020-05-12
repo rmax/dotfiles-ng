@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'scrooloose/syntastic'
 "Plug 'xavierchow/vim-swagger-preview'
 Plug '5long/pytest-vim-compiler', {'for': 'python'}
+Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Shougo/deoplete.nvim'
