@@ -231,7 +231,6 @@ if has('gui_running')
   highlight ColorColumn guibg=grey20
 endif
 
-
 " enable dictionary and completion on func call
 function! EnableWordsCompletion()
   set dictionary+=/usr/share/dict/american-english
@@ -357,6 +356,9 @@ let g:terraform_align = 1
 let g:terraform_fold_sections = 1
 let g:terraform_fmt_on_save = 1
 
+" nv notes
+let g:nv_search_paths = ['~/Dropbox/Notes', 'TODO.md', 'README.md', './docs']
+
 " gutentags
 let g:gutentags_ctags_tagfile = '.tags'
 
@@ -378,7 +380,7 @@ omap <F1> <Esc>
 set clipboard=unnamed
 
 " vim-swagger-preview
-"nmap <unique> <leader>g <Plug>GenerateDiagram
+nmap <unique> <leader>g <Plug>GenerateDiagram
 
-"set cmdheight=2
-"let g:echodoc#enable_at_startup=1
+set cmdheight=2
+let g:echodoc#enable_at_startup=1
