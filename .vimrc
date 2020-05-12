@@ -33,6 +33,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-rooter'
+Plug 'alok/notational-fzf-vim'
 Plug 'chrisbra/NrrwRgn'
 Plug 'cjrh/vim-conda', {'for': 'python'}
 Plug 'cocopon/iceberg.vim'
@@ -81,8 +82,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'wincent/command-t', {'do': 'rake make'}
 Plug 'wokalski/autocomplete-flow', {'for': 'javascript'}
 Plug 'yssl/QFEnter'
-
-Plug 'alok/notational-fzf-vim'
 
 call plug#end()
 
@@ -303,6 +302,18 @@ set pastetoggle=<f12>
 "
 " Plugins settings
 "
+
+"notational-fzf-vim
+let g:nv_main_directory=['~/Dropbox/Notes']
+let g:nv_search_paths=['~/Dropbox/Notes']
+let g:nv_default_extension='.md'
+let g:nv_create_note_key='ctrl-x'
+let g:nv_keymap={
+                  \ 'ctrl-s': 'split ',
+                  \ 'ctrl-v': 'vertical split ',
+                  \ 'ctrl-t': 'tabedit ',
+                  \ }
+let g:nv_create_note_window='vertical split'
 
 " Taglist
 let g:Tlist_Process_File_Always = 1

@@ -20,8 +20,12 @@ BOOTSTRAP_DIR=${BOOTSTRAP_DIR:-"${HOME}/.bootstrap.d"}
 
 yadm submodule update --recursive --init
 
+pushd $HOME
+
 for SOURCE in ${BOOTSTRAP_DIR}/*.sh; do
   source ${SOURCE}
 done
+
+popd
 
 echo "Done! :tada:"
