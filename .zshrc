@@ -116,8 +116,6 @@ func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 [ -f "$HOME/.theme" ] && source "$HOME/.theme"
 
 [ -d "$ZPLUG_HOME/bin" ] && export PATH="$ZPLUG_HOME/bin:$PATH"
-[ -d "$CONDA_HOME/bin" ] && export PATH="$CONDA_HOME/bin:$PATH"
-[ -d "$RVM_HOME/bin" ] && export PATH="$$RVM_HOME/bin:$PATH"
 
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 [ -d "$HOME/go" ] && export GOPATH="$HOME/go"
@@ -175,3 +173,4 @@ unset __conda_setup
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(pyenv init -)"
+eval "$(rbenv init -)"

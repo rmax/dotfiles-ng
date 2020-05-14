@@ -1,6 +1,6 @@
 
 function pip-install() {
-  pyenv exec pip install --upgrade $1
+  pyenv exec pip install --upgrade $@
 }
 
 function pyver-install() {
@@ -10,7 +10,7 @@ function pyver-install() {
   pyenv local $PYVER
 
   pip-install pip wheel
-  pip-install pipenv
+  pip-install -r ${BOOTSTRAP_DIR}/python-requirements.txt
 }
 
 pyver-install 3.6.10
@@ -22,5 +22,5 @@ pyver-install 3.8.2
 # tlsv1 alert protocol version - skipping
 #pyver-install pypy-5.7.1
 
-pyenv global 3.7.7
-pyenv local 3.7.7
+pyenv global 3.8.2
+pyenv local 3.8.2

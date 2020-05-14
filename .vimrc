@@ -31,6 +31,7 @@ Plug '5long/pytest-vim-compiler', {'for': 'python'}
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'PieterjanMontens/vim-pipenv'
 Plug 'Shougo/deoplete.nvim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-rooter'
@@ -55,6 +56,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
 Plug 'klen/python-mode', {'for': 'python'}
+Plug 'lambdalisue/vim-pyenv'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'luochen1990/rainbow'
 Plug 'mhinz/vim-signify'
@@ -63,7 +65,9 @@ Plug 'neutaaaaan/iosvkem'
 Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'plasticboy/vim-markdown'
+Plug 'plytophogy/vim-virtualenv'
 Plug 'prettier/vim-prettier'
+Plug 'psf/black', {'branch': 'stable'}
 Plug 'rking/ag.vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
