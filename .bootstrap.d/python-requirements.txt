@@ -1,0 +1,5 @@
+awscli
+http-prompt
+ipython
+mitmproxy
+saws

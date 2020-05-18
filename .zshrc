@@ -137,7 +137,16 @@ func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 [ -d "$HOME/.nvm" ] && export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # homebrew location
 
+[ -d "$HOME/.pyenv" ] && eval "$(pyenv init -)"
 [ -d "$HOME/.rbenv" ] && eval "$(rbenv init -)"
+
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+# Nix profile dir is set up during nix installation.
+[ -d "$HOME/.nix-profile" ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
+
+# Workaround to have /nix symlinked. See https://github.com/NixOS/nix/issues/2925
+export NIX_IGNORE_SYMLINK_STORE=1
 
 export TF_GLOBAL_DIR="${HOME}/.terraform"
 export TF_PLUGIN_DIR="${TF_GLOBAL_DIR}/plugins"
@@ -148,8 +157,6 @@ export FZF_COMPLETION_OPTS="--preview '(bat --color=always {} || cat {} || tree 
 export FZF_CTRL_T_OPTS="$FZF_COMPLETION_OPTS"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-[ -s "/Users/rmax/.scm_breeze/scm_breeze.sh" ] && source "/Users/rmax/.scm_breeze/scm_breeze.sh"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -167,10 +174,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-[ -s "/Users/max/.scm_breeze/scm_breeze.sh" ] && source "/Users/max/.scm_breeze/scm_breeze.sh"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval "$(pyenv init -)"
-eval "$(rbenv init -)"

@@ -37,7 +37,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-rooter'
 Plug 'alok/notational-fzf-vim'
 Plug 'chrisbra/NrrwRgn'
-Plug 'cjrh/vim-conda', {'for': 'python'}
+"Plug 'cjrh/vim-conda', {'for': 'python'}
 Plug 'cocopon/iceberg.vim'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'dense-analysis/ale'
@@ -56,7 +56,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
 Plug 'klen/python-mode', {'for': 'python'}
-Plug 'lambdalisue/vim-pyenv'
+Plug 'plytophogy/vim-virtualenv'|Plug 'lambdalisue/vim-pyenv'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'luochen1990/rainbow'
 Plug 'mhinz/vim-signify'
@@ -64,10 +64,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neutaaaaan/iosvkem'
 Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'plasticboy/vim-markdown'
-Plug 'plytophogy/vim-virtualenv'
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'prettier/vim-prettier'
-Plug 'psf/black', {'branch': 'stable'}
+Plug 'psf/black', {'branch': 'stable', 'for': 'python'}
 Plug 'rking/ag.vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -389,3 +388,7 @@ nmap <unique> <leader>g <Plug>GenerateDiagram
 
 set cmdheight=2
 let g:echodoc#enable_at_startup=1
+
+let g:black_fast = 1
+let g:black_linelength = 100
+let g:black_skip_string_normalization = 100
