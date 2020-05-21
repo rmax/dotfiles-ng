@@ -1,5 +1,7 @@
 awscli
+black
 http-prompt
 ipython
-mitmproxy
+#mitmproxy
+pytest
 saws

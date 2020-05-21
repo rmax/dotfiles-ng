@@ -31,6 +31,7 @@ export ZPLUG_HOME="$HOME/.zplug"
 export ZPLUG_REPOS="$ZPLUG_HOME/repos"
 export ZPLUG_SUDO_PASSWORD=
 export ZPLUG_PROTOCOL=https
+export ZPLUG_THREADS=64
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 

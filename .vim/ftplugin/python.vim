@@ -35,9 +35,10 @@ let g:pymode_utils_whitespaces = 0
 "   E501 line too long
 "   W391 blank line at end of file
 let g:pymode_lint_ignore='E128,E225,E231,E251,E261,E262,E301,E303,E401,E501,W391'
-let g:pymode_options_max_line_length = 88
+let g:pymode_options_max_line_length = 99
 
 " ale
 let g:ale_completion_enabled = 1
 let b:ale_linters = ['flake8']
 let b:ale_fixers = ['black']
+let b:ale_warn_about_trailing_whitespace = 0

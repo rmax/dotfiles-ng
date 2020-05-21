@@ -60,13 +60,13 @@ Plug 'plytophogy/vim-virtualenv'|Plug 'lambdalisue/vim-pyenv'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'luochen1990/rainbow'
 Plug 'mhinz/vim-signify'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neutaaaaan/iosvkem'
 Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'prettier/vim-prettier'
-Plug 'psf/black', {'branch': 'stable', 'for': 'python'}
+"Plug 'psf/black', {'branch': 'stable', 'for': 'python'}
 Plug 'rking/ag.vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
