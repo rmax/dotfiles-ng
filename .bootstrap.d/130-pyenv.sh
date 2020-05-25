@@ -10,7 +10,7 @@ function pyver-install() {
   pyenv local $PYVER
 
   pip-install pip wheel
-  pip-install -r ${BOOTSTRAP_DIR}/python-requirements.txt
+  pip-install ipython
 }
 
 pyver-install 3.6.10

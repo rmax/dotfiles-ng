@@ -82,6 +82,7 @@ zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
 zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*darwin*amd64*", frozen:1
 zplug "k4rthik/git-cal", as:command
 zplug "mszostok/codeowners-validator", from:gh-r, as:command, use:"*Darwin*x86_64*"
+zplug "cli/cli", from:gh-r, as:command, use:cli, rename-to:gh
 zplug "paulirish/git-open", as:command
 zplug "peco/peco", as:command, from:gh-r, frozen:1
 zplug "rmax-contrib/gister", as:command, use:gister.sh, rename-to:gister

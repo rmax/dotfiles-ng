@@ -55,8 +55,8 @@ Plug 'junegunn/fzf', {'dir': '~/.zplug/repos/junegunn/fzf', 'do': { -> fzf#insta
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
-Plug 'klen/python-mode', {'for': 'python'}
-Plug 'plytophogy/vim-virtualenv'|Plug 'lambdalisue/vim-pyenv'
+Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
+"Plug 'plytophogy/vim-virtualenv'|Plug 'lambdalisue/vim-pyenv'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'luochen1990/rainbow'
 Plug 'mhinz/vim-signify'

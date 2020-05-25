@@ -118,9 +118,10 @@ func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 
 [ -d "$ZPLUG_HOME/bin" ] && export PATH="$ZPLUG_HOME/bin:$PATH"
 
-[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 [ -d "$HOME/go" ] && export GOPATH="$HOME/go"
 [ -d "$HOME/.cargo" ] && export PATH="$HOME/.cargo/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
 
 [ -s "$RVM_HOME/scripts/rvm" ] && source "$RVM_HOME/scripts/rvm" 
 
@@ -177,4 +178,3 @@ unset __conda_setup
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
