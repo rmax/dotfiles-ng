@@ -122,11 +122,12 @@ func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 [ -d "$HOME/.cargo" ] && export PATH="$HOME/.cargo/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
+[ -d "$HOME/miniconda3/bin" ] && export PATH="$HOME/miniconda3/bin:$PATH"
 
 [ -s "$RVM_HOME/scripts/rvm" ] && source "$RVM_HOME/scripts/rvm" 
 
 [ -s "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+#[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 [ -s "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
 # tabtab source for serverless package
@@ -140,7 +141,7 @@ func mkcd() { mkdir -p "$@" && cd "${@: -1}" }
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # homebrew location
 
 [ -d "$HOME/.pyenv" ] && eval "$(pyenv init -)"
-[ -d "$HOME/.rbenv" ] && eval "$(rbenv init -)"
+#[ -d "$HOME/.rbenv" ] && eval "$(rbenv init -)"
 
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
@@ -162,14 +163,14 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/engineer/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    if [ -f "/home/engineer/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/engineer/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+        export PATH="/home/engineer/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -178,3 +179,5 @@ unset __conda_setup
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -s "/home/engineer/.scm_breeze/scm_breeze.sh" ] && source "/home/engineer/.scm_breeze/scm_breeze.sh"

@@ -1,4 +1,6 @@
 # Skip if exists.
+[[ "${BOOTSTRAP_OS}" != "osx" ]] && return
+
 test -n "$(command -v nix)" && return
 
 # A workaround to SIP in latest MacO which doesn't allow creating root

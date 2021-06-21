@@ -41,7 +41,7 @@ zplug "plugins/rsync",   from:oh-my-zsh, defer:1
 zplug "plugins/shrink-path",   from:oh-my-zsh, defer:1
 zplug "plugins/ssh-agent",   from:oh-my-zsh, defer:1
 zplug "plugins/terraform",   from:oh-my-zsh, defer:1
-zplug "plugins/textmate",   from:oh-my-zsh, defer
+zplug "plugins/textmate",   from:oh-my-zsh, defer:1
 zplug "plugins/thefuck",   from:oh-my-zsh, defer:1
 zplug "plugins/tig",   from:oh-my-zsh, defer:1
 zplug "plugins/timer",   from:oh-my-zsh, defer:1

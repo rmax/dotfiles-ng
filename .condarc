@@ -4,7 +4,6 @@ show_channel_urls: yes
 
 channels:
   - conda-forge
-  - rolando
   - defaults
 
 #proxy_servers:

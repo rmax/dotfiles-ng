@@ -4,6 +4,7 @@ vim-nox
 python
 python-dev
 rake
+rbenv
 ruby
 ruby-dev
 zsh
